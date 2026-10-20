@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>طقسنا - حالة الجو في السعودية</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div>
+        <h1>طقسنا ☀️</h1>
+        <p class="sub" id="today"></p>
+      </div>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="تبديل الوضع الليلي">🌙</button>
+    </header>
+
+    <form id="searchForm" class="search" autocomplete="off">
+      <input id="cityInput" type="search" placeholder="اكتب اسم مدينتك... (مثال: الرياض، أبها)" aria-label="اسم المدينة" required>
+      <button type="submit">دوّر</button>
+      <button id="locBtn" type="button" class="ghost" title="استخدم موقعي">📍</button>
+    </form>
+    <ul id="suggest" class="suggest" hidden></ul>
+
+    <div id="chips" class="chips" aria-label="مدن سريعة"></div>
+
+    <p id="status" class="status" role="status" hidden></p>
+
+    <section id="current" class="current" hidden>
+      <div class="now">
+        <div>
+          <h2 id="place"></h2>
+          <p id="desc" class="desc"></p>
+        </div>
+        <div class="big"><span id="icon"></span><strong id="temp"></strong></div>
+      </div>
+      <p id="advice" class="advice"></p>
+      <dl class="facts">
+        <div><dt>الإحساس</dt><dd id="feels"></dd></div>
+        <div><dt>الرطوبة</dt><dd id="humidity"></dd></div>
+        <div><dt>الرياح</dt><dd id="wind"></dd></div>
+      </dl>
+    </section>
+
+    <section id="hourlyWrap" class="panel" hidden>
+      <h3>الساعات الجاية</h3>
+      <div id="hourly" class="hourly"></div>
+    </section>
+
+    <section id="dailyWrap" class="panel" hidden>
+      <h3>الأسبوع كله</h3>
+      <ul id="daily" class="daily"></ul>
+    </section>
+
+    <p class="credit">البيانات من <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> — بدون مفتاح API.</p>
+  </main>
+
+  <script src="js/weather-api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
